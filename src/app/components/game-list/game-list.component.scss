@@ -1,0 +1,58 @@
+@import "../../../assets/sass/variables";
+@import "../../../assets/sass/mixins";
+
+.card-list {
+  display: flex;
+  width: 100%;
+}
+
+.game-card {
+  @include card-shadow;
+  position: relative;
+  margin: 0 10px 10px;
+  padding: 15px;
+  z-index:10;
+  border: 2px solid rgb(206, 170, 10); 
+  border-radius: 6px;
+  background-color: $card-background;
+  width: 30%;
+  max-width: 300px;
+  min-height: 100px;
+  color: black;
+
+  h2 {
+    margin: 0;
+  }
+
+  h4 {
+    margin: 0;
+    font-size: smaller;
+  }
+
+  .game-img {
+    width: 101%;
+    height: 130px;
+    background: url("../../../assets/images/link.jpg");
+  }
+
+  .icon img {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    transform: rotate(-45deg);
+  }
+}
+
+.game-card:before {
+  content:"";
+  display:block;
+  position:absolute;
+  z-index:-1;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid rgb(110, 74, 6)
+}

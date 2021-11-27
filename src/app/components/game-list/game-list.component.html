@@ -1,0 +1,11 @@
+<div class="card-list">
+  <div *ngFor="let game of games"
+      class="game-card">
+    <div class="game-img">
+    </div>
+    <h2>{{ game.title }}</h2>
+    <h4>Date de parution: {{ game.releaseDate | date:'longDate' }}</h4>
+    <p>{{ game.description }} </p>
+    <div class="icon"><img src="../../../assets/images/zelda_sword_contour.png" alt="zelda_sword"></div>
+  </div>
+</div>
