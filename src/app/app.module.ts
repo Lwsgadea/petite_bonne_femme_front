@@ -7,13 +7,17 @@ import localeFr from '@angular/common/locales/fr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GameListComponent } from './components/game-list/game-list.component';
+import { GameFormComponent } from './components/game-form/game-form.component';
+import { HeaderComponent } from './components/header/header.component';
 
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
     AppComponent,
-    GameListComponent
+    GameListComponent,
+    GameFormComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,94 @@
+$border: 1px solid rgba(165, 164, 164, 0.486);
+$link-height: 40px;
+$link-width: 200px;
+$hover-link-height: 38px;
+$hover-link-width: 199px;
+
+.header {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  margin: 0;
+  padding: 10px 0;
+  background-color: black;
+  font-family: 'Triforce';
+  font-size: small;
+
+  h1 {
+    width: 40%;
+  }
+
+  nav {
+    width: 20%;
+    position: relative;
+
+    .nav-menu {
+      height: $link-height;
+      width: $link-width;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      padding-right: 10px;
+
+      &:hover {
+        height: $hover-link-height;
+        width: $hover-link-width;
+        border: $border;
+      }
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      display: none;
+      transition: display 100ms ease-out;
+      z-index: 100;
+
+      li {
+        margin: 0;
+        padding-right: 10px;
+        height: $link-height;
+        width: $link-width;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        list-style: none;
+        background: black;
+
+        &:hover {
+          height: $hover-link-height;
+          width: $hover-link-width;
+          border: $border;
+        }
+
+        &::before {
+          content: '';
+          display: inline-block;
+          margin-right: 10px;
+          height: 14px;
+          width: 14px;
+          background-image: url('../../../assets/images/epee_liens.png');
+          background-size: 14px;
+        }
+
+        &:hover::before{
+          transform: rotate(45deg);
+          transition-duration: 200ms;
+        }
+
+        a {
+          text-decoration: none;
+          color: white
+        }
+      }
+    }
+    
+    &:hover ul {
+      transform: translateY(40px);
+      display: block;
+      transition-duration: 500ms;
+    }
+  }
+}

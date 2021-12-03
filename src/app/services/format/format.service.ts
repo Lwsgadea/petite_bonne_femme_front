@@ -54,11 +54,12 @@ export class FormatService {
 
   requestGames(arr: any[]) {
     // Keep only array with games
-    this.games = arr[3][0]
+    this.games = arr[3][0];
     // Iterates through games
     for(let i = 0; i < this.games.length; i++) {
       // iterates through each game
-      for(let i = 0; i < Object.keys(this.games[i]).length; i++) {
+      /* for(let i = 0; i < Object.keys(this.games[i]).length; i++) {
+        console.log(this.games[i])
         this.game = {
           id: this.games[i].id,
           title: this.games[i].title,
@@ -70,7 +71,7 @@ export class FormatService {
           editor: this.games[i].editor,
           online: this.games[i].online
         }
-      }
+      } */
     }
     return this.games;
   }
