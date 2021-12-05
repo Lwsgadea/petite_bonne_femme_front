@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GameFormComponent } from './components/game-form/game-form.component';
 import { HeaderComponent } from './components/header/header.component';
+import { GamePageComponent } from './components/game-page/game-page.component';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -17,7 +18,8 @@ registerLocaleData(localeFr, 'fr');
     AppComponent,
     GameListComponent,
     GameFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    GamePageComponent
   ],
   imports: [
     BrowserModule,

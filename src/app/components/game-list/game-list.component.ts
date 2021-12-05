@@ -28,12 +28,13 @@ export class GameListComponent implements OnInit {
   }
 
   requestFormat(data: Object) {
+    // Call from API
     let gamesRequest = this.formatService.formatRequest(data);
     
-    // To return arrays for games and request infos
-    this.games = this.formatService.requestGames(gamesRequest) 
+    // To format games and request infos
+    let gamesArray = this.formatService.requestGameList(gamesRequest) 
+    this.games = gamesArray
     this.infos = this.formatService.requestInfos(gamesRequest)
-    console.log(this.games, this.infos)
   }
 }
  

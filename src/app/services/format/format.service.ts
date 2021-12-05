@@ -15,30 +15,26 @@ export class FormatService {
     id: 0,
     title: '',
     description: '',
-    genre: {
+    genres: [{
       id: 0,
       uri: '',
-      type: '',
       name: ''
-    },
-    platform: {
+    }],
+    platforms: [{
       id: 0,
       uri: '',
-      type: '',
       name: ''
-    },
-    editor: {
+    }],
+    editors: [{
       id: 0,
       uri: '',
-      type: '',
       name: ''
-    },
-    type: {
+    }],
+    types: [{
       id: 0,
       uri: '',
-      type: '',
       name: ''
-    },
+    }],
     releaseDate: '',
     online: false
   };
@@ -52,28 +48,43 @@ export class FormatService {
     return arr;
   }
 
-  requestGames(arr: any[]) {
+  requestGameList(arr: any[]) {
     // Keep only array with games
-    this.games = arr[3][0];
-    // Iterates through games
-    for(let i = 0; i < this.games.length; i++) {
-      // iterates through each game
-      /* for(let i = 0; i < Object.keys(this.games[i]).length; i++) {
-        console.log(this.games[i])
-        this.game = {
-          id: this.games[i].id,
-          title: this.games[i].title,
-          description: this.games[i].description,
-          releaseDate: this.games[i].releaseDate,
-          platform: this.games[i].platform,
-          type: this.games[i].type,
-          genre: this.games[i].genre,
-          editor: this.games[i].editor,
-          online: this.games[i].online
-        }
-      } */
+    let games = arr[3][0];
+    return games;
+  }
+
+  formatGames(game: any) {
+    this.game = {
+      id: game.id,
+      title: game.title,
+      description: game.description,
+      releaseDate: game.releaseDate,
+      platforms: this.formatGameOption(game.platforms),
+      types: this.formatGameOption(game.types),
+      genres: this.formatGameOption(game.genres),
+      editors: this.formatGameOption(game.editors),
+      online: game.online
     }
-    return this.games;
+    // console.log(this.game)
+    return this.game;
+    
+  }
+
+  formatGameOption(options: any[]) {
+    
+    for(let i = 0; i < options.length; i++) {
+      for(let [key, value] of Object.entries(options[i])) {
+        if(key === '@id') {
+          options[i] = {
+            id: options[i].id,
+            name: options[i].name,
+            uri: value
+          }
+        }
+      }
+    }
+    return options;
   }
 
   requestInfos(arr: any[]) {
