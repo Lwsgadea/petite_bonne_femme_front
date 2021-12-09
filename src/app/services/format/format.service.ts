@@ -66,24 +66,22 @@ export class FormatService {
       editors: this.formatGameOption(game.editors),
       online: game.online
     }
-    // console.log(this.game)
     return this.game;
     
   }
 
   formatGameOption(options: any[]) {
-    
+    // Iterate through games
     for(let i = 0; i < options.length; i++) {
+      // Keep wanted properties 
       for(let [key, value] of Object.entries(options[i])) {
         if(key === '@id') {
           options[i] = {
             id: options[i].id,
             name: options[i].name,
-            uri: value
-          }
-        }
-      }
-    }
+            uri: value,
+            games: options[i].game
+          }}}}
     return options;
   }
 
@@ -91,7 +89,6 @@ export class FormatService {
     // To get the games themselves out and keep request infos only
     for(let elt of arr) {
       if(typeof(elt[0]) != 'object') {
-        //  console.log(elt[0])
         this.infos.push(elt[0])
       }
     }

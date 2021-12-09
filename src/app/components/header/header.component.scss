@@ -63,18 +63,19 @@ $hover-link-width: 199px;
           border: $border;
         }
 
-        &::before {
+        &::after {
           content: '';
           display: inline-block;
-          margin-right: 10px;
+          margin-left: 10px;
           height: 14px;
           width: 14px;
           background-image: url('../../../assets/images/epee_liens.png');
           background-size: 14px;
+          transform: rotate(-90deg);
         }
 
-        &:hover::before{
-          transform: rotate(45deg);
+        &:hover::after{
+          transform: rotate(-135deg);
           transition-duration: 200ms;
         }
 

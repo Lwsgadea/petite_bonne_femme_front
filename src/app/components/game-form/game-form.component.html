@@ -1,1 +1,25 @@
-<p>game-form works!</p>
+<form [formGroup]="GameForm" (ngSubmit)="onSubmit()">
+  <label for="title">Titre du jeu: </label>
+  <input type="text" id="title" formControlName="title">
+
+  <label for="releaseDate">Date de sortie: </label>
+  <input type="date" id="releaseDate" formControlName="releaseDate">
+
+  <label for="description">Description: </label>
+  <input type="text" id="description" formControlName="description">
+
+  <label for="genres">Genres: </label>
+  <input type="select" id="genres" formControlName="genres">
+
+  <label for="types">Types: </label>
+  <input type="select" id="types" formControlName="types">
+
+  <label for="editors">Editeurs: </label>
+  <input type="select" id="editors" formControlName="editors">
+
+  <label for="platforms">Platformes: </label>
+  <input type="select" id="platforms" formControlName="platforms">
+
+  <button type="submit" [disabled]="!GameForm.valid">Sauvegarder</button>
+
+</form>

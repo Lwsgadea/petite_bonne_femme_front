@@ -3,9 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GameFormComponent } from './components/game-form/game-form.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -24,7 +26,8 @@ registerLocaleData(localeFr, 'fr');
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'fr-FR'} ],
   bootstrap: [AppComponent]

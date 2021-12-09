@@ -9,11 +9,9 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class GamesService {
 
-  private gamesUrl = 'http://localhost:8000/api/games';
-
   constructor(private http: HttpClient) { }
 
-  getGame(): Observable<Object> {
+  getGames(): Observable<Object> {
     return this.http.get('http://localhost:8000/api/games', {})
   }
 }

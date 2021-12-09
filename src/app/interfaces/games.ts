@@ -12,8 +12,9 @@ export interface Game {
 
 export interface gameOption {
   readonly id: number,
+  name: string,
   uri: string,
-  name: string
+  games?: string[]
 }
 
 export interface Infos {
